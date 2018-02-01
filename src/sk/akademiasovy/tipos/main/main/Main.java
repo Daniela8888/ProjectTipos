@@ -1,7 +1,10 @@
 package sk.akademiasovy.tipos.main.main;
 
+import sk.akademiasovy.tipos.main.Bet;
 import sk.akademiasovy.tipos.main.Tipos;
 import sk.akademiasovy.tipos.main.database.MySQLDatabase;
+
+import java.util.List;
 
 public class Main {
     public static void main (String[] args){
@@ -11,6 +14,7 @@ public class Main {
 
         MySQLDatabase mySQLDatabase=new MySQLDatabase();
         mySQLDatabase.insertValuesIntoDrawHistory(tipos.getArr());
+        List <Bet> list=mySQLDatabase.getNewBets();
 
     }
 }
